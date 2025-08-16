@@ -18,7 +18,7 @@ from tensorflow.keras.layers import LSTM, Dense, Dropout
 from tensorflow.keras.utils import to_categorical
 from sklearn.metrics import classification_report
 
-# 📥 Chargement du fichier CSV
+#  Chargement du fichier CSV
 df = pd.read_csv("Darknet.csv")  # Ignore les lignes corrompues
 print(df.shape)
 display(df.head())
@@ -111,18 +111,18 @@ fig.update_layout(
 
 fig.show()
 
-# 📦 Importer les bibliothèques nécessaires
+# Importer les bibliothèques nécessaires
 from tensorflow.keras.models import save_model
 import joblib
 import os
 
-# 📁 Créer un dossier "model" s'il n'existe pas
+# Créer un dossier "model" s'il n'existe pas
 os.makedirs("model", exist_ok=True)
 
-# 💾 Sauvegarder le modèle LSTM
+# Sauvegarder le modèle LSTM
 model.save("model/traffic_classifier_model.h5")
 
-# 💾 Sauvegarder le scaler MinMaxScaler
+# Sauvegarder le scaler MinMaxScaler
 joblib.dump(scaler, "model/scaler.pkl")
 
 # 💾 Sauvegarder le LabelEncoder
